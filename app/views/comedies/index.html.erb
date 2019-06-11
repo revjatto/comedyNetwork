@@ -1,0 +1,13 @@
+    <% @comedies.each do |comedy| %>
+      <div class="card">
+      <div class"card-body">
+        <p><%= link_to comedy.title, comedy %> | <%= comedy.user.email %> |
+       <%= comedy.created_at.strftime("%B, %d, %Y") %></p>
+        <p><%= comedy.body %>
+       </div>
+       <br>
+      </div>
+    <% end %>
+<br>
+
+<%= link_to 'New Comedy', new_comedy_path %>

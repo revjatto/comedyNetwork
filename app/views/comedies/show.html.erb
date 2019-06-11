@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @comedy.title %> By: <%= @comedy.user.email %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @comedy.body.html_safe %>
+</p>
+<% if current_user && current_user.admin %>
+
+ <%= link_to 'Destroy', @comedy, method: :delete, data: { confirm: 'Are you sure?' } %> |
+
+ <% end %>
+ <%= link_to 'Edit', edit_comedy_path(@comedy) %> |
+<%= link_to 'Back', comedies_path %>
